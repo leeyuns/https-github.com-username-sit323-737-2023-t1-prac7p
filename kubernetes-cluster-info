@@ -1,0 +1,264 @@
+addonsConfig:
+  dnsCacheConfig:
+    enabled: true
+  gcePersistentDiskCsiDriverConfig:
+    enabled: true
+  gcpFilestoreCsiDriverConfig:
+    enabled: true
+  horizontalPodAutoscaling: {}
+  httpLoadBalancing: {}
+  kubernetesDashboard:
+    disabled: true
+  networkPolicyConfig:
+    disabled: true
+authenticatorGroupsConfig: {}
+autopilot:
+  enabled: true
+autoscaling:
+  autoprovisioningNodePoolDefaults:
+    imageType: COS_CONTAINERD
+    management:
+      autoRepair: true
+      autoUpgrade: true
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    serviceAccount: default
+    upgradeSettings:
+      maxSurge: 1
+      strategy: SURGE
+  autoscalingProfile: OPTIMIZE_UTILIZATION
+  enableNodeAutoprovisioning: true
+  resourceLimits:
+  - maximum: '1000000000'
+    resourceType: cpu
+  - maximum: '1000000000'
+    resourceType: memory
+  - maximum: '1000000000'
+    resourceType: nvidia-tesla-t4
+  - maximum: '1000000000'
+    resourceType: nvidia-tesla-a100
+binaryAuthorization:
+  evaluationMode: DISABLED
+clusterIpv4Cidr: 10.49.128.0/17
+createTime: '2023-04-22T13:47:19+00:00'
+currentMasterVersion: 1.25.7-gke.1000
+currentNodeCount: 4
+currentNodeVersion: 1.25.7-gke.1000
+databaseEncryption:
+  state: DECRYPTED
+defaultMaxPodsConstraint:
+  maxPodsPerNode: '110'
+endpoint: 34.97.47.89
+etag: 6c51fcb5-b389-48d0-91f6-ca844405b4d6
+id: bf2275bbb4324b9f95fd8332e4eaf141116188e53cb147caad90f767d70ad3c4
+initialClusterVersion: 1.25.7-gke.1000
+instanceGroupUrls:
+- https://www.googleapis.com/compute/v1/projects/sit323-23t1-steve-lee-06e1229/zones/asia-northeast2-a/instanceGroupManagers/gk3-autopilot-cluster-1-default-pool-d07ee55b-grp
+- https://www.googleapis.com/compute/v1/projects/sit323-23t1-steve-lee-06e1229/zones/asia-northeast2-b/instanceGroupManagers/gk3-autopilot-cluster-1-default-pool-ef2bb291-grp
+- https://www.googleapis.com/compute/v1/projects/sit323-23t1-steve-lee-06e1229/zones/asia-northeast2-b/instanceGroupManagers/gk3-autopilot-cluster-1-nap-9cqr97mz-b1ceed48-grp
+- https://www.googleapis.com/compute/v1/projects/sit323-23t1-steve-lee-06e1229/zones/asia-northeast2-c/instanceGroupManagers/gk3-autopilot-cluster-1-nap-9cqr97mz-aa736dd2-grp
+- https://www.googleapis.com/compute/v1/projects/sit323-23t1-steve-lee-06e1229/zones/asia-northeast2-a/instanceGroupManagers/gk3-autopilot-cluster-1-nap-9cqr97mz-622de871-grp
+ipAllocationPolicy:
+  clusterIpv4Cidr: 10.49.128.0/17
+  clusterIpv4CidrBlock: 10.49.128.0/17
+  clusterSecondaryRangeName: gke-autopilot-cluster-1-pods-bf2275bb
+  podCidrOverprovisionConfig: {}
+  servicesIpv4Cidr: 10.50.0.0/22
+  servicesIpv4CidrBlock: 10.50.0.0/22
+  servicesSecondaryRangeName: gke-autopilot-cluster-1-services-bf2275bb
+  stackType: IPV4
+  useIpAliases: true
+labelFingerprint: a9dc16a7
+legacyAbac: {}
+location: asia-northeast2
+locations:
+- asia-northeast2-b
+- asia-northeast2-c
+- asia-northeast2-a
+loggingConfig:
+  componentConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+    - WORKLOADS
+loggingService: logging.googleapis.com/kubernetes
+maintenancePolicy:
+  resourceVersion: e3b0c442
+masterAuth:
+  clusterCaCertificate: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMVENDQXBXZ0F3SUJBZ0lSQUl6K3JlenVyMzhaVFRpV3dPYVFDeEl3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa05qWmxOemM0TTJJdE9Ua3lZaTAwWTJGaExUaGlZamN0TTJGa09ETmtNMlZrTkdRMQpNQ0FYRFRJek1EUXlNakV5TkRjeU1Wb1lEekl3TlRNd05ERTBNVE0wTnpJeFdqQXZNUzB3S3dZRFZRUURFeVEyCk5tVTNOemd6WWkwNU9USmlMVFJqWVdFdE9HSmlOeTB6WVdRNE0yUXpaV1EwWkRVd2dnR2lNQTBHQ1NxR1NJYjMKRFFFQkFRVUFBNElCandBd2dnR0tBb0lCZ1FDZVVQVXRRNWdtT29VcE5UYTZmSEdmcUVnMzNGcWc0ZVNKaktsWApKZnRmRmtseTF0WjZ5MXlBYkd3dUwyZWxReG4wckY5ZjA2RkRPOHQ1NWMvQndxMkNEUGpOM29wMnRmRDVocGk0CmQxL1Q5akN5WUdEeHd1QTFTa3dPZkNpZFk4RW1tdjkzK0lRbGljcklCQk1SaFVrOG9UR3lRNjJ0MkdRS0NzU0UKT1ZnTlp5MkVleTlsa1c1Yy9teG9ZcWNEbXF1dHRkOFQ5amdXYUVyV2l5US9SVm9RZjZ0bG4wTjZNRms4TUFPbQpFeXlXQjNWWi9GaS9hSllKaElZR3VEZ3Qvb09rZDlYdkZPWjhOM1dydTFNNm1kRUNsSSticHY0dEtzVzU2SlBiClFYRm1LT3drUWYxWlB5MGZqdlRINFZtSUVEd08wWWQzOE10enhVZE1YSmRwVjBmZVNia3Y2VG5pM3FRN0ZTYVgKRTlBTjY1REN1c1RkQ2tDMldFd2UwYmJZVUtkeXpLK2xmZm5BSGs5MEljVUYySmZ4WkpQc1VHODlJU3QvVHBmawpGR1ZpaXRwcGowaXNFMi95ejA4NkZMVlUxWHdYZmdHZkxsLzFERnpNbTd3K1gxL1NvUUpOc21sd2dxNjJVZFRFCkhBQ0duS0oremdzMVVSSXJmWWtrd0h6NUN4VUNBd0VBQWFOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdJRU1BOEcKQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGRjlVQkNGc2pudkhPT3JrcCtwczh1bXh3U1M4TUEwRwpDU3FHU0liM0RRRUJDd1VBQTRJQmdRQndua0ZrNHQ1MGl1Y0hoQW16MS9sRFRyYjRJWmYzZVFPQkltMHpUL1cxCjYwem1pWk5SSTJsSGpFdkYrN2JJOWNTQkl1c1c1QzZDUlBKcEVxUkNvMlhneHFmM2ZOQUtjSzFoY1pkeHRZcnQKelFveVMvbEtEUjhZMGdMcFFYcnlUajdPVk84RSttWUIrMVc2SFo1M2JKak15U2lVdWRCVkE5TnoyejBKWTdrRQpzaVBWeUxQUGs1T3B1cVFHRE55QkdHdlR5T2JsMlVZdHVBOEJjMDdJcWx3azdWczhJaHhZMUpDb3ZycVlvNnpSCk4wUk1wZDdBMnNwRzJVZlVoSU8rMjVRWm5mNWFQb0tFanl2cFBkbEFnRUEyWXp5L0VwenEwWjk1Wk1IbE5tTjMKdFNoVVBmR2kySWNkWHVlbzRRWlF0dmh1T2p0RjdGOWErVUQvTFZwU0lya0o3WkcxazVxenQ4NCtIWmthZThqVQpMWTBNQ08yWDRCTTdMUkVTL2pNUnJlK1lvTCtjNWk2cm5RekFEdCtqT2s5Mkc2WUVMTmsybHRoREtBb0lTeDA0Cmw0VTNBMnpCNDEweGVwTk5PVzhvUmJuaUFyWWZreVlnOTdqVVlEcW1Zb3dJSkI4Snc5U05TOWs1NUgyT0hQV2YKYUNSMVR5aDFxaFhBdGo2azJCOUdWdXM9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+masterAuthorizedNetworksConfig:
+  gcpPublicCidrsAccessEnabled: true
+monitoringConfig:
+  componentConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+  managedPrometheusConfig:
+    enabled: true
+monitoringService: monitoring.googleapis.com/kubernetes
+name: autopilot-cluster-1
+network: default
+networkConfig:
+  datapathProvider: ADVANCED_DATAPATH
+  defaultSnatStatus: {}
+  enableIntraNodeVisibility: true
+  network: projects/sit323-23t1-steve-lee-06e1229/global/networks/default
+  serviceExternalIpsConfig: {}
+  subnetwork: projects/sit323-23t1-steve-lee-06e1229/regions/asia-northeast2/subnetworks/default
+nodeConfig:
+  diskSizeGb: 100
+  diskType: pd-standard
+  imageType: COS_CONTAINERD
+  machineType: e2-medium
+  metadata:
+    disable-legacy-endpoints: 'true'
+  oauthScopes:
+  - https://www.googleapis.com/auth/devstorage.read_only
+  - https://www.googleapis.com/auth/logging.write
+  - https://www.googleapis.com/auth/monitoring
+  - https://www.googleapis.com/auth/service.management.readonly
+  - https://www.googleapis.com/auth/servicecontrol
+  - https://www.googleapis.com/auth/trace.append
+  serviceAccount: default
+  shieldedInstanceConfig:
+    enableIntegrityMonitoring: true
+    enableSecureBoot: true
+  windowsNodeConfig: {}
+  workloadMetadataConfig:
+    mode: GKE_METADATA
+nodePoolAutoConfig: {}
+nodePoolDefaults:
+  nodeConfigDefaults:
+    gcfsConfig:
+      enabled: true
+    loggingConfig:
+      variantConfig:
+        variant: DEFAULT
+nodePools:
+- autoscaling:
+    autoprovisioned: true
+    enabled: true
+    locationPolicy: BALANCED
+    maxNodeCount: 1000
+  config:
+    diskSizeGb: 100
+    diskType: pd-standard
+    imageType: COS_CONTAINERD
+    machineType: e2-medium
+    metadata:
+      disable-legacy-endpoints: 'true'
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: bf913c5b-1b88-4552-8fb8-934f646255dd
+  initialNodeCount: 1
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/sit323-23t1-steve-lee-06e1229/zones/asia-northeast2-a/instanceGroupManagers/gk3-autopilot-cluster-1-default-pool-d07ee55b-grp
+  - https://www.googleapis.com/compute/v1/projects/sit323-23t1-steve-lee-06e1229/zones/asia-northeast2-b/instanceGroupManagers/gk3-autopilot-cluster-1-default-pool-ef2bb291-grp
+  locations:
+  - asia-northeast2-a
+  - asia-northeast2-b
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '32'
+  name: default-pool
+  networkConfig:
+    enablePrivateNodes: false
+    podIpv4CidrBlock: 10.49.128.0/17
+    podRange: gke-autopilot-cluster-1-pods-bf2275bb
+  podIpv4CidrSize: 26
+  selfLink: https://container.googleapis.com/v1/projects/sit323-23t1-steve-lee-06e1229/locations/asia-northeast2/clusters/autopilot-cluster-1/nodePools/default-pool
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.25.7-gke.1000
+- autoscaling:
+    autoprovisioned: true
+    enabled: true
+    locationPolicy: BALANCED
+    maxNodeCount: 1000
+  config:
+    diskSizeGb: 100
+    diskType: pd-standard
+    imageType: COS_CONTAINERD
+    machineType: e2-standard-2
+    metadata:
+      disable-legacy-endpoints: 'true'
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    reservationAffinity:
+      consumeReservationType: NO_RESERVATION
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: 8b7f80d2-bf67-4457-b8c9-f1540c855467
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/sit323-23t1-steve-lee-06e1229/zones/asia-northeast2-b/instanceGroupManagers/gk3-autopilot-cluster-1-nap-9cqr97mz-b1ceed48-grp
+  - https://www.googleapis.com/compute/v1/projects/sit323-23t1-steve-lee-06e1229/zones/asia-northeast2-c/instanceGroupManagers/gk3-autopilot-cluster-1-nap-9cqr97mz-aa736dd2-grp
+  - https://www.googleapis.com/compute/v1/projects/sit323-23t1-steve-lee-06e1229/zones/asia-northeast2-a/instanceGroupManagers/gk3-autopilot-cluster-1-nap-9cqr97mz-622de871-grp
+  locations:
+  - asia-northeast2-b
+  - asia-northeast2-c
+  - asia-northeast2-a
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '32'
+  name: nap-9cqr97mz
+  networkConfig:
+    enablePrivateNodes: false
+    podIpv4CidrBlock: 10.49.128.0/17
+    podRange: gke-autopilot-cluster-1-pods-bf2275bb
+  placementPolicy: {}
+  podIpv4CidrSize: 26
+  selfLink: https://container.googleapis.com/v1/projects/sit323-23t1-steve-lee-06e1229/locations/asia-northeast2/clusters/autopilot-cluster-1/nodePools/nap-9cqr97mz
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.25.7-gke.1000
+notificationConfig:
+  pubsub: {}
+privateClusterConfig:
+  privateEndpoint: 10.174.0.2
+  publicEndpoint: 34.97.47.89
+releaseChannel:
+  channel: REGULAR
+selfLink: https://container.googleapis.com/v1/projects/sit323-23t1-steve-lee-06e1229/locations/asia-northeast2/clusters/autopilot-cluster-1
+servicesIpv4Cidr: 10.50.0.0/22
+shieldedNodes:
+  enabled: true
+status: RECONCILING
+subnetwork: default
+verticalPodAutoscaling:
+  enabled: true
+workloadIdentityConfig:
+  workloadPool: sit323-23t1-steve-lee-06e1229.svc.id.goog
+zone: asia-northeast2
